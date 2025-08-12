@@ -1,6 +1,6 @@
 import os, shutil
 
-path = r"C:\Users\josed\OneDrive\Escritorio\Proyectos VS Code\Python\\" #The Path that where we are going to order or create the automate file Sorter.
+path = r"C:\Users\##############\Proyectos VS Code\Python\\" #The Path that where we are going to order or create the automate file Sorter.
 file_name = os.listdir(path)
 folder_names = ['csv files', 'image files', 'text files'] #The name of the folders.
 for temp in range(0,3): #We need to adjust the range in case of adding more folders.
@@ -17,4 +17,5 @@ for file in file_name:
     else:
         print("There are files in this path that were not moved.") #This text will be printed 4 times. The same amount of times it loops the for.
         
+
 #In case we need to add more files or to sorte more files; we need to add their respective path.
