@@ -1,0 +1,20 @@
+import os, shutil
+
+path = r"C:\Users\josed\OneDrive\Escritorio\Proyectos VS Code\Python\\" #The Path that where we are going to order or create the automate file Sorter.
+file_name = os.listdir(path)
+folder_names = ['csv files', 'image files', 'text files'] #The name of the folders.
+for temp in range(0,3): #We need to adjust the range in case of adding more folders.
+    if not os.path.exists(path + folder_names[temp]): #Review if the folders exists. 
+        os.makedirs((path + folder_names[temp])) #In case it dosent, it will created them.
+
+for file in file_name:
+    if ".csv" in file and not os.path.exists(path + "csv files/" + file): #Review if the text is in the file.
+        shutil.move(path +  file, path + "csv files/" + file) #It will move all documents that are csv to thaat carpet.
+    elif ".png" in file and not os.path.exists(path + "images files/" + file):
+        shutil.move(path +  file, path + "images files/" + file)
+    elif".txt" in file and not os.path.exists(path + "text files/" + file):
+        shutil.move(path +  file, path + "text files/" + file)
+    else:
+        print("There are files in this path that were not moved.") #This text will be printed 4 times. The same amount of times it loops the for.
+        
+#In case we need to add more files or to sorte more files; we need to add their respective path.
